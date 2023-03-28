@@ -55,7 +55,94 @@ class _MyAppState extends State<MyApp> {
         });
         break;
       case '+':
-        if (operacao != '') {}
+        if (operacao != '') {
+          switch (operacao) {
+          case '+':
+            resultado = (primeiroNumero + double.parse(numero)).toString();
+
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+
+            break;
+          case '-':
+            resultado = (primeiroNumero - double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case 'X':
+            resultado = (primeiroNumero * double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case '/':
+            if (numero == '0') {
+              setState(() {
+                numero = '0';
+              });
+            } else {
+              resultado = (primeiroNumero / double.parse(numero)).toString();
+              List<String> resultadoPartes = resultado.split('.');
+              List<String> resultadoPartesTwo =
+                  (primeiroNumero.toString()).split('.');
+              if ((resultadoPartes[1] * 1 == '0') &&
+                  resultadoPartesTwo[1] * 1 == '0') {
+                int resultadoFormatado = int.parse(resultadoPartes[0]);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                });
+              } else {
+                double resultadoFormatado = double.parse(resultado);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                  numero = double.parse(numero).toStringAsFixed(2).toString();
+                });
+              }
+            }
+            break;
+        }
+        }
         primeiroNumero = double.parse(numero);
         numero = '0';
         setState(() {
@@ -63,6 +150,94 @@ class _MyAppState extends State<MyApp> {
         });
         break;
       case '-':
+      if (operacao != '') {
+          switch (operacao) {
+          case '+':
+            resultado = (primeiroNumero + double.parse(numero)).toString();
+
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+
+            break;
+          case '-':
+            resultado = (primeiroNumero - double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case 'X':
+            resultado = (primeiroNumero * double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case '/':
+            if (numero == '0') {
+              setState(() {
+                numero = '0';
+              });
+            } else {
+              resultado = (primeiroNumero / double.parse(numero)).toString();
+              List<String> resultadoPartes = resultado.split('.');
+              List<String> resultadoPartesTwo =
+                  (primeiroNumero.toString()).split('.');
+              if ((resultadoPartes[1] * 1 == '0') &&
+                  resultadoPartesTwo[1] * 1 == '0') {
+                int resultadoFormatado = int.parse(resultadoPartes[0]);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                });
+              } else {
+                double resultadoFormatado = double.parse(resultado);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                  numero = double.parse(numero).toStringAsFixed(2).toString();
+                });
+              }
+            }
+            break;
+        }
+        }
         primeiroNumero = double.parse(numero);
         numero = '0';
         setState(() {
@@ -70,6 +245,94 @@ class _MyAppState extends State<MyApp> {
         });
         break;
       case 'X':
+      if (operacao != '') {
+          switch (operacao) {
+          case '+':
+            resultado = (primeiroNumero + double.parse(numero)).toString();
+
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+
+            break;
+          case '-':
+            resultado = (primeiroNumero - double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case 'X':
+            resultado = (primeiroNumero * double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case '/':
+            if (numero == '0') {
+              setState(() {
+                numero = '0';
+              });
+            } else {
+              resultado = (primeiroNumero / double.parse(numero)).toString();
+              List<String> resultadoPartes = resultado.split('.');
+              List<String> resultadoPartesTwo =
+                  (primeiroNumero.toString()).split('.');
+              if ((resultadoPartes[1] * 1 == '0') &&
+                  resultadoPartesTwo[1] * 1 == '0') {
+                int resultadoFormatado = int.parse(resultadoPartes[0]);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                });
+              } else {
+                double resultadoFormatado = double.parse(resultado);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                  numero = double.parse(numero).toStringAsFixed(2).toString();
+                });
+              }
+            }
+            break;
+        }
+        }
         primeiroNumero = double.parse(numero);
         numero = '0';
         setState(() {
@@ -77,6 +340,94 @@ class _MyAppState extends State<MyApp> {
         });
         break;
       case '/':
+      if (operacao != '') {
+          switch (operacao) {
+          case '+':
+            resultado = (primeiroNumero + double.parse(numero)).toString();
+
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+
+            break;
+          case '-':
+            resultado = (primeiroNumero - double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case 'X':
+            resultado = (primeiroNumero * double.parse(numero)).toString();
+            List<String> resultadoPartes = resultado.split('.');
+            List<String> resultadoPartesTwo =
+                (primeiroNumero.toString()).split('.');
+            if ((resultadoPartes[1] * 1 == '0') &&
+                resultadoPartesTwo[1] * 1 == '0') {
+              int resultadoFormatado = int.parse(resultadoPartes[0]);
+              setState(() {
+                numero = resultadoFormatado.toString();
+              });
+            } else {
+              double resultadoFormatado = double.parse(resultado);
+              setState(() {
+                numero = resultadoFormatado.toString();
+                numero = double.parse(numero).toStringAsFixed(2).toString();
+              });
+            }
+            break;
+          case '/':
+            if (numero == '0') {
+              setState(() {
+                numero = '0';
+              });
+            } else {
+              resultado = (primeiroNumero / double.parse(numero)).toString();
+              List<String> resultadoPartes = resultado.split('.');
+              List<String> resultadoPartesTwo =
+                  (primeiroNumero.toString()).split('.');
+              if ((resultadoPartes[1] * 1 == '0') &&
+                  resultadoPartesTwo[1] * 1 == '0') {
+                int resultadoFormatado = int.parse(resultadoPartes[0]);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                });
+              } else {
+                double resultadoFormatado = double.parse(resultado);
+                setState(() {
+                  numero = resultadoFormatado.toString();
+                  numero = double.parse(numero).toStringAsFixed(2).toString();
+                });
+              }
+            }
+            break;
+        }
+        }
         primeiroNumero = double.parse(numero);
         numero = '0';
         setState(() {
